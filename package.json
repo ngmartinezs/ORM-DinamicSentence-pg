@@ -1,0 +1,75 @@
+{
+  "name": "@ngmartinezs-npm/ORM-DinamicSentence-pg",
+  "version": "1.0.0",
+  "description": "Librería javascript que permite la coneccion y ejecución de operaciones a nivel de base de datos postgres.   Esta librería proporciona métodos para establecer y gestionar la coneccion hacia la base de datos, así como los mecanismos para realizar operación insert, update, delete y select sobre una base de postgres, retirando al equipo de desarrollo la necesidad de hacer líneas para abrir conexiones hacia la base de datos y crear rutinas para acceder a extraer información de la DB.   ",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "source": [
+    "src/index.js",
+    "src/config.js",
+    "src/connectionDB.js",
+    "src/objectCrud.js"
+  ],
+  "scripts": {
+    "pruebaTransaction": "DBNAME=ecommercedb DBUSER=postgres DBPASSWORD=12345678* DBHOST=localhost DBPORT=5432  node 'src/clientConnection.js'",
+    "preparaTest": "DBNAME=ecommercedb DBUSER=postgres DBPASSWORD=12345678* DBHOST=localhost DBPORT=5432  node 'test/preTest/creaDDLTest.js'",
+    "ejecutaTest": "DBNAME=ecommercedb DBUSER=postgres DBPASSWORD=12345678* DBHOST=localhost DBPORT=5432 mocha 'test/*.js'",
+    "test": "npm run preparaTest && npm run ejecutaTest",
+    "build": "microbundle",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    " base de datos ",
+    " libpq ",
+    " pg ",
+    " postgre ",
+    " postgres ",
+    " postgresql ",
+    " rdbms "
+  ],
+  " página de inicio ": "https://github.com/ngmartinezs/ORM-DinamicSentence-pg",
+  " repositorio ": {
+    " type ": "git",
+    " url ": "https://github.com/ngmartinezs/ORM-DinamicSentence-pg.git"
+  },
+  " autor ": " Brian Carlson <brian.m.carlson@gmail.com> ",
+  "author": "ngmartinezs@gmail.com",
+  "license": "GPU",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "microbundle": "^0.12.3",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ]
+}
