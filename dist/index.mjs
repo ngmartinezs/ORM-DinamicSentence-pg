@@ -1,2 +1,2 @@
-var e=require("./config").config,r=require("./connectionDB"),o=require("./objectCrud");exports.config=e,exports.ConnectionDB=r,exports.ObjectCrud=o;
+var e=require("./configDB").configDB,r=require("./connectionDB"),i=require("./objectCrud"),o=require("./dinamicQuery");exports.configDB=e,exports.ConnectionDB=r,exports.ObjectCrud=i,exports.dinamicQuery=o;
 //# sourceMappingURL=index.mjs.map

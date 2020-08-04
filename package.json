@@ -1,6 +1,6 @@
 {
-  "name": "@ngmartinezs-npm/ORM-DinamicSentence-pg",
-  "version": "1.0.0",
+  "name": "@ngmartinezs-npm/orm-dinamicsentence-pg",
+  "version": "0.0.0",
   "description": "Librería javascript que permite la coneccion y ejecución de operaciones a nivel de base de datos postgres.   Esta librería proporciona métodos para establecer y gestionar la coneccion hacia la base de datos, así como los mecanismos para realizar operación insert, update, delete y select sobre una base de postgres, retirando al equipo de desarrollo la necesidad de hacer líneas para abrir conexiones hacia la base de datos y crear rutinas para acceder a extraer información de la DB.   ",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
@@ -9,7 +9,8 @@
     "src/index.js",
     "src/config.js",
     "src/connectionDB.js",
-    "src/objectCrud.js"
+    "src/objectCrud.js",
+    "src/dinamicQuery.js"
   ],
   "scripts": {
     "pruebaTransaction": "DBNAME=ecommercedb DBUSER=postgres DBPASSWORD=12345678* DBHOST=localhost DBPORT=5432  node 'src/clientConnection.js'",
